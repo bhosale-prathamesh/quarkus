@@ -256,6 +256,7 @@
                 <module>oidc-client-registration</module>
                 <module>oidc-client-reactive</module>
                 <module>oidc-client-wiremock</module>
+                <module>oidc-mtls</module>
                 <module>oidc-token-propagation</module>
                 <module>oidc-token-propagation-reactive</module>
                 <module>openapi</module>
@@ -264,6 +265,7 @@
                 <module>oidc-code-flow</module>
                 <module>oidc-tenancy</module>
                 <module>oidc-wiremock</module>
+                <module>oidc-wiremock-logout</module>
                 <module>keycloak-authorization</module>
                 <module>rest-csrf</module>
                 <module>reactive-db2-client</module>
