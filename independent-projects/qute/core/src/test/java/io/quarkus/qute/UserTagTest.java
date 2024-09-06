@@ -1,8 +1,8 @@
 package io.quarkus.qute;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -90,15 +90,19 @@ public class UserTagTest {
         Template tag = engine.parse("{it} {surname}");
         engine.putTemplate("my-tag-id", tag);
 
-        String eachResult = engine.parse("{#each surnames}{#myTag it.toUpperCase surname=it.toLowerCase /}{/each}")
-                .data("surnames", Collections.singleton("Kouba")).render();
+        assertEquals("KOUBA kouba",
+                sortResultString(engine.parse("{#each surnames}{#myTag it.toUpperCase surname=it.toLowerCase /}{/each}")
+                        .data("surnames", Collections.singleton("Kouba")).render()));
+        assertEquals("KOUBA kouba",
+                sortResultString(engine.parse(
+                        "{#for surname in surnames}{#each surnames}{#myTag it.toUpperCase surname=surname.toLowerCase /}{/each}{/for}")
+                        .data("surnames", Collections.singleton("Kouba")).render()));
+    }
 
-        String forResult = engine.parse(
-                "{#for surname in surnames}{#each surnames}{#myTag it.toUpperCase surname=surname.toLowerCase /}{/each}{/for}")
-                .data("surnames", Collections.singleton("Kouba")).render();
-
-        assertTrue("KOUBA kouba".equals(eachResult) || "kouba KOUBA".equals(eachResult));
-        assertTrue("KOUBA kouba".equals(forResult) || "kouba KOUBA".equals(forResult));
+    private String sortResultString(String result) {
+        var strList = Arrays.asList(result.split(" "));
+        Collections.sort(strList);
+        return String.join(" ", strList);
     }
 
     @Test
