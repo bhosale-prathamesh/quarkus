@@ -39,7 +39,7 @@
         <micrometer.version>1.13.3</micrometer.version><!-- keep in sync with hdrhistogram -->
         <hdrhistogram.version>2.2.2</hdrhistogram.version><!-- keep in sync with micrometer -->
         <google-auth.version>0.22.0</google-auth.version>
-        <graphql-java.version>22.1</graphql-java.version> <!-- keep in sync with smallrye-graphql -->
+        <graphql-java.version>22.2</graphql-java.version> <!-- keep in sync with smallrye-graphql -->
         <microprofile-config-api.version>3.1</microprofile-config-api.version>
         <microprofile-health-api.version>4.0.1</microprofile-health-api.version>
         <microprofile-metrics-api.version>4.0.1</microprofile-metrics-api.version>
@@ -56,7 +56,7 @@
         <smallrye-health.version>4.1.0</smallrye-health.version>
         <smallrye-metrics.version>4.0.0</smallrye-metrics.version>
         <smallrye-open-api.version>3.10.0</smallrye-open-api.version>
-        <smallrye-graphql.version>2.9.2</smallrye-graphql.version>
+        <smallrye-graphql.version>2.10.0</smallrye-graphql.version>
         <smallrye-fault-tolerance.version>6.4.0</smallrye-fault-tolerance.version>
         <smallrye-jwt.version>4.6.0</smallrye-jwt.version>
         <smallrye-context-propagation.version>2.1.2</smallrye-context-propagation.version>
@@ -103,7 +103,7 @@
         <narayana.version>7.0.2.Final</narayana.version>
         <agroal.version>2.5</agroal.version>
         <jboss-transaction-spi.version>8.0.0.Final</jboss-transaction-spi.version>
-        <elasticsearch-opensource-components.version>8.15.0</elasticsearch-opensource-components.version>
+        <elasticsearch-opensource-components.version>8.15.1</elasticsearch-opensource-components.version>
         <rxjava.version>2.2.21</rxjava.version>
         <wildfly.openssl-java.version>2.2.5.Final</wildfly.openssl-java.version>
         <wildfly.openssl-linux.version>2.2.2.Final</wildfly.openssl-linux.version>
@@ -150,7 +150,7 @@
         <scala.version>2.13.14</scala.version>
         <aws-lambda-java.version>1.2.3</aws-lambda-java.version>
         <aws-lambda-java-events.version>3.13.0</aws-lambda-java-events.version>
-        <aws-xray.version>2.18.1</aws-xray.version>
+        <aws-xray.version>2.18.2</aws-xray.version>
         <cloudevents-api.version>3.0.0</cloudevents-api.version>
         <azure-functions-java-library.version>3.1.0</azure-functions-java-library.version>
         <azure-functions-java-spi.version>1.0.0</azure-functions-java-spi.version>
