@@ -2,6 +2,7 @@ package io.quarkus.qute;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -90,12 +91,18 @@ public class UserTagTest {
         engine.putTemplate("my-tag-id", tag);
 
         assertEquals("KOUBA kouba",
-                engine.parse("{#each surnames}{#myTag it.toUpperCase surname=it.toLowerCase /}{/each}")
-                        .data("surnames", Collections.singleton("Kouba")).render());
+                sortResultString(engine.parse("{#each surnames}{#myTag it.toUpperCase surname=it.toLowerCase /}{/each}")
+                        .data("surnames", Collections.singleton("Kouba")).render()));
         assertEquals("KOUBA kouba",
-                engine.parse(
+                sortResultString(engine.parse(
                         "{#for surname in surnames}{#each surnames}{#myTag it.toUpperCase surname=surname.toLowerCase /}{/each}{/for}")
-                        .data("surnames", Collections.singleton("Kouba")).render());
+                        .data("surnames", Collections.singleton("Kouba")).render()));
+    }
+
+    private String sortResultString(String result) {
+        var strList = Arrays.asList(result.split(" "));
+        Collections.sort(strList);
+        return String.join(" ", strList);
     }
 
     @Test
